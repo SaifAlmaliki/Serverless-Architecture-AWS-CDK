@@ -36,6 +36,29 @@ The application is built using a microservices architecture:
 - Basket Microservice: Manages user baskets and emits checkout events.
 - Ordering Microservice: Processes orders and saves them in DynamoDB.
 
+## Folder Structure
+````
+.
+├── bin/
+│   └── serverless-architecture-aws-cdk.ts   # Entry point for the CDK app
+├── lib/
+│   ├── apigateway.ts                        # API Gateway configuration
+│   ├── database.ts                          # DynamoDB table setup
+│   ├── eventbus.ts                          # EventBridge configuration
+│   ├── microservice.ts                      # Lambda functions for microservices
+│   ├── queue.ts                             # SQS queues configuration
+│   └── serverless-architecture-aws-cdk-stack.ts # Main stack definition
+├── src/
+│   ├── basket/                              # Basket microservice code
+│   ├── ordering/                            # Ordering microservice code
+│   └── product/                             # Product microservice code
+├── test/
+│   └── serverless-architecture-aws-cdk.test.ts # Unit tests
+├── cdk.json                                 # CDK execution configuration
+└── package.json                             # Project dependencies and scripts
+
+````
+
 ## Event-Driven Architecture
 The project uses AWS EventBridge to enable communication between microservices. For example:
 
